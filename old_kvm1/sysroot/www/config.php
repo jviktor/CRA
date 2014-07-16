@@ -10,7 +10,7 @@ class phpVBoxConfig {
 
 /* Username / Password for system user that runs VirtualBox */
 var $username = 'vbox';
-var $password = 'vbox';
+var $password = 'HERE_IS_THE_PASSWORD';
 
 /* SOAP URL of vboxwebsrv (not phpVirtualBox's URL) */
 var $location = 'http://127.0.0.1:18083/';
