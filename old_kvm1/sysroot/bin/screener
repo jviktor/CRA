@@ -1,0 +1,7 @@
+#!/bin/bash
+echo -en "\n Stopping CRA... "
+screen -S cra -X quit
+echo "[done]"
+echo -en " Starting CRA... "
+screen -dmS cra
+echo -e "[done]\n"

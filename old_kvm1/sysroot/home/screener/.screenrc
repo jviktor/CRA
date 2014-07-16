@@ -1,0 +1,79 @@
+# Easier than remembering to always run from non-X
+unsetenv DISPLAY
+
+# Likewise, for charset
+setenv LC_CTYPE en_US.UTF-8
+
+# I wanna scrollback a lot!
+defscrollback 5000
+
+# Skip disclamer
+startup_message off
+
+vbell off # turn off visual bell
+
+defwritelock auto
+
+# Status messages:
+hardstatus on
+hardstatus alwayslastline
+#hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a"
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{B}%Y-%m-%d %{W}%c %{g}]'
+
+screen -t "R1" /dev/ttyMI0
+screen -t "R2" /dev/ttyMI1
+screen -t "R3" /dev/ttyMI2
+screen -t "S1" /dev/ttyMI3
+screen -t "S2" /dev/ttyMI4
+screen -t "S3" /dev/ttyMI5
+
+# To avoid from nasty screeners
+shell /bin/false
+
+# Remove some stupid / dangerous key bindings
+bind c
+bind ^c
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+bind h
+
+# Add some useful keybindings
+bindkey "^[[1;3D" prev # xterm: alt + left arrow
+bindkey "^[[1;3C" next # xterm: alt + right arrow
+bindkey "^p" prev # xterm: alt + left arrow
+bindkey "^n" next # xterm: alt + right arrow
+bindkey "^x" detach
+bindkey "^k1" select 1
+
+# For multiusering
+multiuser on
+
+# VIP
+
+#acladd cra
+acladd BOMHABS.SZE
+acladd CSPRACT.SZE
+acladd JAVMAAT.SZE
+
+# Cisco CCNA 2014
+
+acladd BOESABT.SZE
+acladd CSFPAAT.SZE
+acladd GAZUAAT.SZE
+acladd GAETAAT.SZE
+acladd HATTAAT.SZE
+acladd HOATAAT.SZE
+acladd KEAKAAT.SZE
+acladd NANUACT.SZE
+acladd PADSABT.SZE
+acladd ROIVAAT.SZE
+acladd ROPSAAT.SZE
+acladd RUGUAAT.SZE
+acladd SOBQAAT.SZE
+acladd VILMAAT.SZE
+ 
+

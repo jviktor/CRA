@@ -1,0 +1,48 @@
+#!/bin/bash
+
+tempfile="/tmp/${USER}_lastchoice"
+
+while true ; do
+dialog --menu "CRA" 11 40 4 1 "Remote access" 2 "Change password" 3 "Show manual" 4 "Exit" 2>$tempfile
+ 
+# OK is pressed
+if [ "$?" = "0" ]
+then
+        _return=$(cat $tempfile)
+	rm -f $tempfile
+ 
+        # /home is selected
+        if [ "$_return" = "1" ]
+        then
+		screen -x screener/cra
+        fi
+ 
+         # /root is selected
+        if [ "$_return" = "2" ]
+        then
+		if [ "$USER" != "cra" ]
+		then
+			passwd
+		fi
+        fi
+ 
+         # /howto is selected
+        if [ "$_return" = "3" ]
+        then
+		dialog --msgbox "`cat /etc/clab/howto`" 16 61
+        fi
+ 
+         # /tmp is selected
+        if [ "$_return" = "4" ]
+        then
+		exit 0
+        fi
+ 
+# Cancel is pressed
+else
+        echo "Cancel is pressed"
+fi
+ 
+# remove the temp file
+
+done

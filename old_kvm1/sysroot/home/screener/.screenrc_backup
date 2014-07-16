@@ -1,0 +1,38 @@
+# An alternative hardstatus to display a bar at the bottom listing the
+# windownames and highlighting the current windowname in blue. (This is only
+# enabled if there is no hardstatus setting for your terminal)
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "[CRA v0.1] %{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+multiuser on
+#defwritelock on
+startup_message off
+
+screen -t R1 /dev/ttyMI0
+screen -t R2 /dev/ttyMI1
+screen -t R3 /dev/ttyMI2
+screen -t SW1 /dev/ttyMI3
+screen -t SW2 /dev/ttyMI4
+screen -t SW3 /dev/ttyMI5
+
+acladd cra
+acladd BOMHABS.SZE
+acladd CSPRACT.SZE
+acladd JAVMAAT.SZE
+acladd BOESABT.SZE
+acladd CSFPAAT.SZE
+acladd GAZUAAT.SZE
+acladd GAETAAT.SZE
+acladd HATTAAT.SZE
+acladd HOATAAT.SZE
+acladd KEAKAAT.SZE
+acladd NANUACT.SZE
+acladd PADSABT.SZE
+acladd ROIVAAT.SZE
+acladd ROPSAAT.SZE
+acladd RUGUAAT.SZE
+acladd SOBQAAT.SZE
+acladd VILMAAT.SZE
+ 
+
